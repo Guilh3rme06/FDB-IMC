@@ -1,6 +1,6 @@
 # FDB-IMC
 
-Exercício da IPLUSO Ensino Politécnico da Lusofonia. Gostei muito de fazer este projeto.
+Exercício da IPLUSO Ensino Politécnico da Lusofonia. 
 
 ## Instalação
 
