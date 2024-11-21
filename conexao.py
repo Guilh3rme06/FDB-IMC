@@ -1,5 +1,6 @@
 import sqlite3
-# Conexão com a base de dados 'escola.db'
+
+# Conexão com a base de dados 'IMC.db'
 conn = sqlite3.connect('IMC.db')
 
 # Criação de um cursor para executar comandos SQL
@@ -19,12 +20,12 @@ conn.commit()
 
 def create_user(name, age, height, weight):
     try:
-        cursor.execute('INSERT INTO users (name, age,height,weight) VALUES (?,?,?,?)',
+        cursor.execute('INSERT INTO users (name, age, height, weight) VALUES (?,?,?,?)',
                        (name, int(age), float(height), int(weight)))
         conn.commit()
         print("User criado com sucesso")
-    except:
-        print("ERRO AO CRIAR USER")
+    except Exception as e:
+        print(f"ERRO AO CRIAR USER: {e}")
 
 def calcular_imc(name):
     try:
@@ -40,8 +41,8 @@ def calcular_imc(name):
         print(f"ERRO AO CALCULAR IMC: {e}")
 
 def find_user_by_name(name):
-    cursor.execute('SELECT * from users WHERE username = ?', (name,))
-    result = cursor.fetchall()
+    cursor.execute('SELECT * FROM users WHERE name = ?', (name,))
+    result = cursor.fetchone()
     if result:
-        return result[0]
+        return result
     return None
