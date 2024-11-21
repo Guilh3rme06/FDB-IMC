@@ -28,13 +28,13 @@ def create_user(name, age, height, weight):
 
 def calcular_imc(name):
     try:
-        cursor.execute('SELECT name,height,weight FROM users WHERE name = ? ', (name,))
+        cursor.execute('SELECT name, height, weight FROM users WHERE name = ?', (name,))
         result = cursor.fetchone()
         if result:
-            height, weight = result
+            user_name, height, weight = result
             imc = weight / height ** 2
-            print(f"O IMC do {name} é {imc:.2f}")
+            print(f"O IMC do {user_name} é {imc:.2f}")
         else:
-            print("ERRO AO CALCULAR IMC")
-    except:
-        print("ERRO AO CALCULAR IMC")
+            print("Utilizador não encontrado")
+    except Exception as e:
+        print(f"ERRO AO CALCULAR IMC: {e}")

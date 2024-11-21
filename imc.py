@@ -8,6 +8,6 @@ create_user("Elieser", 18, 1.70, 56)
 
 
 print("Bem Vind@\n")
-IMC_name = input("Quer sabe o IMC de que utilizador")
+IMC_name = input("Quer sabe o IMC de que utilizador\n")
 
 calcular_imc(IMC_name)
