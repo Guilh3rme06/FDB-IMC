@@ -21,7 +21,7 @@ if user is None:
         create_user(new_name, new_age, new_height, new_weight)
         calcular_imc(new_name)
     else:
-        print("Saindo do programa.")
+        print("Até já.")
         quit()
 else:
     calcular_imc(IMC_name)
