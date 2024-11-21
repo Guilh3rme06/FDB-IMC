@@ -38,3 +38,10 @@ def calcular_imc(name):
             print("Utilizador não encontrado")
     except Exception as e:
         print(f"ERRO AO CALCULAR IMC: {e}")
+
+def find_user_by_name(name):
+    cursor.execute('SELECT * from users WHERE username = ?', (name,))
+    result = cursor.fetchall()
+    if result:
+        return result[0]
+    return None
