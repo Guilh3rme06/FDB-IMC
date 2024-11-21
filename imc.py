@@ -1,4 +1,4 @@
-from github.conexao import create_user, calcular_imc
+from conexao import create_user, calcular_imc
 
 create_user("Gui", 18, 1.70, 56)
 create_user("Gu", 18, 1.70, 56)
